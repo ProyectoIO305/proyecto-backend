@@ -13,6 +13,19 @@ app.get('/', (req, res) => {
   res.send('Backend funcionando correctamente 🚀');
 });
 
+// Nueva ruta para análisis de sensibilidad
+app.post('/api/sensibilidad', (req, res) => {
+  const datosProblema = req.body;
+
+  console.log('Datos recibidos:', datosProblema);
+
+  // Por ahora solo respondemos confirmando la recepción
+  res.json({
+    mensaje: 'Datos recibidos correctamente',
+    datosRecibidos: datosProblema
+  });
+});
+
 // Arrancar el servidor
 app.listen(PORT, () => {
   console.log(`Servidor backend escuchando en el puerto ${PORT}`);
